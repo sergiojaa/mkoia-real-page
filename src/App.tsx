@@ -3,6 +3,8 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Layout from "./components/Layout";
 import { Children } from "react";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,7 +19,16 @@ function App() {
         {
           path: '/about',
           element: <About />
+        },
+        {
+          path: '/services',
+          element: <Services/>
+        },
+        {
+          path: '/contact',
+          element: <Contact/>
         }
+
       ]
     }
   ]);

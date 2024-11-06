@@ -4,9 +4,9 @@ import image2 from '../assets/logistic2.jpg';
 export default function Services() {
   return (
     <div>
-      <div className='flex' >
-        <div className='ml-[150px] mt-[250px] ' >
-          <p className='text-blue-500 font-bold font-lato text-[30px]'>
+      <div className='xl:flex' >
+        <div className='xl:ml-[150px] ml-[20px] mt-[150px] xl:mt-[250px] ' >
+          <p className='text-blue-500 font-bold font-lato xl:text-[30px]'>
           ჩვენ გთავაზობთ სამშენებლო მასალების ლოჯისტიკას <br />  უმოკლეს დროში. მაგალითად:
         
           </p>
@@ -26,7 +26,7 @@ export default function Services() {
             </ul>
         </div>
         <div>
-      <img className='w-[500px] h-[450px] ml-[100px] mt-[250px] ' src={image2} alt="photo about logistic" />
+      <img className='xl:w-[500px] p-[20px] h-[450px]  xl:ml-[100px] xl:mt-[250px] ' src={image2} alt="photo about logistic" />
 
       </div>
       </div>

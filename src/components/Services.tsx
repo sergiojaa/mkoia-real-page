@@ -1,12 +1,12 @@
-import aboutImage from '../assets/homemkoia.jpg'
+
 import image2 from '../assets/logistic2.jpg';
 
 export default function Services() {
   return (
     <div>
-      <div className='xl:flex' >
-        <div className='xl:ml-[150px] ml-[20px] mt-[150px] xl:mt-[250px] ' >
-          <p className='text-blue-500 font-bold font-lato xl:text-[30px]'>
+      <div className='md:flex  xl:mt-[-100px]' >
+        <div className='xl:ml-[150px] ml-[20px]  mt-[150px] xl:mt-[250px] ' >
+          <p className='text-blue-500 xl:w-[500px] md:mt-[30px] font-bold font-lato xl:text-[30px]'>
           ჩვენ გთავაზობთ სამშენებლო მასალების ლოჯისტიკას <br />  უმოკლეს დროში. მაგალითად:
         
           </p>
@@ -26,7 +26,7 @@ export default function Services() {
             </ul>
         </div>
         <div>
-      <img className='xl:w-[500px] p-[20px] h-[450px]  xl:ml-[100px] xl:mt-[250px] ' src={image2} alt="photo about logistic" />
+      <img className='xl:w-[750px]  p-[20px] h-[450px] md:mt-[200px]  xl:ml-[100px] xl:mt-[300px] ' src={image2} alt="photo about logistic" />
 
       </div>
       </div>

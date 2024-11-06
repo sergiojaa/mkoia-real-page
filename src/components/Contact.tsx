@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import image1 from '../assets/logistic-1.jpg';
 import image2 from '../assets/logistic2.jpg';
 import image3 from '../assets/logistic3.jpg';
@@ -19,16 +19,17 @@ export default function Contact() {
 
   return (
     <div>
-      <div className='mt-[250px]  font-lato ml-[250px] flex' >
-        <div className='mt-[50px]' >
-          <h1 className='text-blue-500 font-bold font-lato text-[40px]'>Contact info</h1>
-          <h2 className='text-gray-500 text-[25px] mt-[10px]'>Mail: infoinfo@mkoia.ge</h2>
-          <h2 className='text-gray-500 text-[25px] mt-[10px]'> Phone Number: +995 574013708</h2>
-          <h2 className='text-gray-500 text-[25px] mt-[10px]'>Phone Number: +995 577409883</h2>
-          <h2 className='text-gray-500 text-[25px] mt-[10px]'>Address: agladze-67</h2>
+      <div className='md:mt-[250px] md:ml-[130px] mt-[200px] ml-[20px]  font-lato xl:ml-[250px] lg:flex' >
+        <div className='md:mt-[50px]' >
+          <h1 className='text-blue-500 font-bold font-lato text-[40px]'>საკონტაქტო ინფორმაცია</h1>
+          <h2 className='text-gray-500 text-[25px]  xl:mt-[20px] mt-[10px]'>მეილი: infoinfo@mkoia.ge</h2>
+          <h2 className='text-gray-500 text-[25px] xl:mt-[20px] mt-[10px]'> ტელეფონის ნომერი: +995 574013708</h2>
+          <h2 className='text-gray-500 text-[25px] xl:mt-[20px] mt-[10px]'>ტელეფონის ნომერი: +995 577409883</h2>
+          <h2 className='text-gray-500 text-[25px] xl:mt-[20px] mt-[10px]'>მისამართი: რ.აგლაძის 57</h2>
         </div>
         <div>
-          <iframe className='w-[500px] ml-[200px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.4223892759487!2d44.806561411998594!3d41.68981647114321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cf72d903d4f%3A0xdd66176bec24ee12!2z4YOb4YOU4YOY4YOT4YOc4YOY4YOhIOGDkeGDkOGDluGDkOGDoOGDmA!5e0!3m2!1ska!2sge!4v1728653218344!5m2!1ska!2sge" width="600" height="450"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1863.571775719697!2d44.77749339848847!3d41.73598060809336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404472ea41f84189%3A0x18305d06032b930!2sLTD%20SIBEL!5e0!3m2!1ska!2sge!4v1730883184638!5m2!1ska!2sge" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
+          <iframe className='md:w-[500px] xl:ml-[230px] lg:mr-[20px]  mt-[20px] mb-[30px] w-[380px] ' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1863.571775719697!2d44.77749339848847!3d41.73598060809336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404472ea41f84189%3A0x18305d06032b930!2sLTD%20SIBEL!5e0!3m2!1ska!2sge!4v1730883184638!5m2!1ska!2sge" width="600" height="450"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
       

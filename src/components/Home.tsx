@@ -26,7 +26,7 @@ export default function Home() {
       {/* Pass activeLink and setActiveLink to the Header */}
       <Header activeLink={activeLink} setActiveLink={setActiveLink} />
 
-      <div className="relative w-full mx-auto overflow-hidden h-[680px]">
+      <div className="relative w-full mx-auto overflow-hidden h-[780px]">
         {images.map((image, index) => (
           <div
             key={index}
@@ -49,7 +49,7 @@ export default function Home() {
       </div>
 
       <div className="md:flex lg:flex-row md:flex-col  items-center    font-poppins">
-        <div className="md:flex  md:flex-col md:w-[50%] ">
+        <div className="md:flex mt-[20px]  md:flex-col md:w-[50%] ">
           <p className="text-gray-500 lg:ml-[40px] pl-[10px]  text-[23px]  font-poppins w-full  md:mt-[50px]">
             <span className="font-bold  font-lato text-[40px]  text-gray-500">ემკოია</span> არის ლოჯისტიკური კომპანია საქართველოში, რომელიც ფლობს სამრეწველო ქონებასა და მოძრავ აქტივებს.
             ჩვენ გთავაზობთ მიწოდების ჯაჭვის ყოვლისმომცველ გადაწყვეტილებებს, შენახვის სერვისებს და მრავალფეროვან ობიექტებს,

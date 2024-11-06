@@ -7,13 +7,13 @@ export default function Footer() {
 
   return (
     <div >
-      <div className='md:mt-[80px]  md:h-[250px] w-full md:flex md:flex-row md:justify-between bg-gray-500'>
+      <div className='md:mt-[80px] lg:h-[280px] md:h-[250px] w-full md:flex md:flex-row md:justify-between bg-gray-500'>
         <div>
-          <p className='font-poppins xl:w-[300px] ml-[20px]  md:ml-[150px] w-[20px]  text-white md:text-[25px] md:mb-[100px] md:mt-[110px]'>
+          <p className='font-poppins lg:w-[300px] xl:w-[300px] ml-[20px]  md:ml-[150px] w-[20px]  text-white md:text-[25px] md:mb-[100px] md:mt-[110px]'>
             © 2024 «შ.პ.ს ემკოია» <br /> ყველა უფლება დაცულია.
           </p>
         </div>
-        <div className='md:mt-[110px] xl:flex   md:mr-[300px]'>
+        <div className='md:mt-[110px] lg:flex lg:ml-[200px] xl:flex   md:mr-[300px]'>
           <div className="  ml-[20px]  pb-[10px]">
           <Link
               to='/'

@@ -12,7 +12,6 @@ interface HeaderProps {
 export default function Header({ activeLink, setActiveLink }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [copyNotification, setCopyNotification] = useState(false);
 
   // Define colors for different active states
   const isHome = activeLink === '/';
@@ -20,9 +19,10 @@ export default function Header({ activeLink, setActiveLink }: HeaderProps) {
   const hamburgerColor = isHome ? 'bg-white' : 'bg-gray-500';
 
   useEffect(() => {
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-      if (window.innerWidth >= 768) {
+      if (!isMobile) {
         setMenuOpen(false);
       }
     };
@@ -30,20 +30,6 @@ export default function Header({ activeLink, setActiveLink }: HeaderProps) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  const handleCopy = () => {
-    const textToCopy = 'K.mchedlishvili@mkoia.ge';
-    navigator.clipboard.writeText(textToCopy)
-      .then(() => {
-        setCopyNotification(true);
-        setTimeout(() => {
-          setCopyNotification(false);
-        }, 1000); // Hide the message after 2 seconds
-      })
-      .catch(err => {
-        console.error('Failed to copy text: ', err);
-      });
-  };
 
   return (
     <header className="absolute top-0 left-0 w-full z-10 bg-transparent">
@@ -69,13 +55,13 @@ export default function Header({ activeLink, setActiveLink }: HeaderProps) {
               <Link to='/' onClick={() => setActiveLink('/')} className={`font-poppins ${navLinkColor} mr-6 text-xl pb-1 transition duration-300 hover:text-gray-400 ${activeLink === '/' ? 'border-b-2 border-white' : ''}`}>
                 Home
               </Link>
-              <Link to='/about' onClick={() => setActiveLink('/about')} className={`font-poppins ${navLinkColor} text-xl pb-1 mr-6 transition duration-300 hover:text-gray-400 ${activeLink === '/about' ? 'border-b-2 border-white' : ''}`}>
+              <Link to='/about' onClick={() => setActiveLink('/about')} className={`font-poppins ${navLinkColor} text-xl pb-1 mr-6 transition duration-300 hover:text-gray-400 ${activeLink === '/about' ? 'border-b-2 border-blue' : ''}`}>
                 About
               </Link>
-              <Link to='/services' onClick={() => setActiveLink('/services')} className={`font-poppins ${navLinkColor} text-xl pb-1 mr-6 transition duration-300 hover:text-gray-400 ${activeLink === '/services' ? 'border-b-2 border-white' : ''}`}>
+              <Link to='/services' onClick={() => setActiveLink('/services')} className={`font-poppins ${navLinkColor} text-xl pb-1 mr-6 transition duration-300 hover:text-gray-400 ${activeLink === '/services' ? 'border-b-2 border-blue' : ''}`}>
                 Services
               </Link>
-              <Link to='/contact' onClick={() => setActiveLink('/contact')} className={`font-poppins ${navLinkColor} text-xl pb-1 transition duration-300 hover:text-gray-400 ${activeLink === '/contact' ? 'border-b-2 border-white' : ''}`}>
+              <Link to='/contact' onClick={() => setActiveLink('/contact')} className={`font-poppins ${navLinkColor} text-xl pb-1 transition duration-300 hover:text-gray-400 ${activeLink === '/contact' ? 'border-b-2 border-blue' : ''}`}>
                 Contact
               </Link>
             </div>
@@ -87,7 +73,6 @@ export default function Header({ activeLink, setActiveLink }: HeaderProps) {
           {/* <h1 className={`font-poppins text-xl cursor-pointer transition duration-300 hover:text-gray-400 ${navLinkColor}`} onClick={handleCopy}>
             K.mchedlishvili@mkoia.ge
           </h1> */}
-          {copyNotification && <span className='ml-4 text-white '>Email copied!</span>}
           <div className={`mr-6 flex items-center ml-6 cursor-pointer transition duration-300 hover:text-gray-400 ${navLinkColor}`}>
             <span className='mr-1 font-poppins text-xl'>ქა</span>
             <FontAwesomeIcon icon={faLanguage} />
@@ -99,51 +84,51 @@ export default function Header({ activeLink, setActiveLink }: HeaderProps) {
 
       {/* Dropdown menu for mobile */}
       {menuOpen && (
-  <div className='flex flex-col items-center bg-transparent p-4'>
-    <div className='flex flex-wrap justify-between w-full gap-1 '>
-      <Link 
-        to='/' 
-        onClick={() => { setActiveLink('/'); setMenuOpen(false); }} 
-        className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
-      >
-        Home
-      </Link>
-      <Link 
-        to='/about' 
-        onClick={() => { setActiveLink('/about'); setMenuOpen(false); }} 
-        className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
-      >
-        About
-      </Link>
-      <Link 
-        to='/services' 
-        onClick={() => { setActiveLink('/services'); setMenuOpen(false); }} 
-        className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
-      >
-        Services
-      </Link>
-      <Link 
-        to='/contact' 
-        onClick={() => { setActiveLink('/contact'); setMenuOpen(false); }} 
-        className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
-      >
-        Contact
-      </Link>
-      {/* <h1 
+        <div className='flex flex-col items-center bg-transparent p-4'>
+          <div className='flex flex-wrap justify-between w-full gap-1 '>
+            <Link
+              to='/'
+              onClick={() => { setActiveLink('/'); setMenuOpen(false); }}
+              className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
+            >
+              Home
+            </Link>
+            <Link
+              to='/about'
+              onClick={() => { setActiveLink('/about'); setMenuOpen(false); }}
+              className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
+            >
+              About
+            </Link>
+            <Link
+              to='/services'
+              onClick={() => { setActiveLink('/services'); setMenuOpen(false); }}
+              className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
+            >
+              Services
+            </Link>
+            <Link
+              to='/contact'
+              onClick={() => { setActiveLink('/contact'); setMenuOpen(false); }}
+              className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
+            >
+              Contact
+            </Link>
+            {/* <h1 
         className={`w-1/3 text-center p-1 font-poppins text-lg cursor-pointer mb-2 hover:bg-gray-200 ${navLinkColor}`} 
         onClick={handleCopy}
       >
         K.mchedlishvili@mkoia.ge
       </h1> */}
-      <div 
-        className={`w-1/3 flex justify-center items-center p-1 cursor-pointer mb-2 hover:bg-gray-200 ${navLinkColor}`}
-      >
-        <span className='mr-1 font-poppins text-lg'>ქა</span>
-        <FontAwesomeIcon icon={faLanguage} />
-      </div>
-    </div>
-  </div>
-)}
+            <div
+              className={`w-1/3 flex justify-center items-center p-1 cursor-pointer mb-2 hover:bg-gray-200 ${navLinkColor}`}
+            >
+              <span className='mr-1 font-poppins text-lg'>ქა</span>
+              <FontAwesomeIcon icon={faLanguage} />
+            </div>
+          </div>
+        </div>
+      )}
 
     </header>
   );

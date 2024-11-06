@@ -1,8 +1,7 @@
-import {createBrowserRouter, RouterProvider, Route} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Layout from "./components/Layout";
-import { Children } from "react";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 
@@ -22,11 +21,11 @@ function App() {
         },
         {
           path: '/services',
-          element: <Services/>
+          element: <Services />
         },
         {
           path: '/contact',
-          element: <Contact/>
+          element: <Contact />
         }
 
       ]
@@ -34,8 +33,8 @@ function App() {
   ]);
   return (
     <>
-    <RouterProvider router={router}></RouterProvider>
-    
+      <RouterProvider router={router}></RouterProvider>
+
     </>
   )
 }

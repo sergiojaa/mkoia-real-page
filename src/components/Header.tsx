@@ -84,9 +84,9 @@ export default function Header({ activeLink, setActiveLink }: HeaderProps) {
 
         {/* Contact information and language selector */}
         <div className='items-center mt-[25px] hidden lg:flex '>
-          <h1 className={`font-poppins text-xl cursor-pointer transition duration-300 hover:text-gray-400 ${navLinkColor}`} onClick={handleCopy}>
+          {/* <h1 className={`font-poppins text-xl cursor-pointer transition duration-300 hover:text-gray-400 ${navLinkColor}`} onClick={handleCopy}>
             K.mchedlishvili@mkoia.ge
-          </h1>
+          </h1> */}
           {copyNotification && <span className='ml-4 text-white '>Email copied!</span>}
           <div className={`mr-6 flex items-center ml-6 cursor-pointer transition duration-300 hover:text-gray-400 ${navLinkColor}`}>
             <span className='mr-1 font-poppins text-xl'>ქა</span>
@@ -129,12 +129,12 @@ export default function Header({ activeLink, setActiveLink }: HeaderProps) {
       >
         Contact
       </Link>
-      <h1 
+      {/* <h1 
         className={`w-1/3 text-center p-1 font-poppins text-lg cursor-pointer mb-2 hover:bg-gray-200 ${navLinkColor}`} 
         onClick={handleCopy}
       >
         K.mchedlishvili@mkoia.ge
-      </h1>
+      </h1> */}
       <div 
         className={`w-1/3 flex justify-center items-center p-1 cursor-pointer mb-2 hover:bg-gray-200 ${navLinkColor}`}
       >

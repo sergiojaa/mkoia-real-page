@@ -1,25 +1,23 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLanguage } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-interface HeaderProps {
-  activeLink: string;
-  setActiveLink: (link: string) => void;
-}
 
-export default function Header({ activeLink, setActiveLink }: HeaderProps) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const location = useLocation()
+  console.log(location.pathname)
 
-  // Define colors for different active states
-  const isHome = activeLink === '/';
-  const navLinkColor = isHome ? 'text-white' : 'text-gray-500';
-  const hamburgerColor = isHome ? 'bg-white' : 'bg-gray-500';
+  
+  const navLinkColor = location.pathname == '/'  ? 'text-white' : 'text-blue-500';
+  const hamburgerColor = location.pathname == '/'  ? 'bg-white' : 'bg-gray-500';
+  // const languageColor = isHome ? 'text-white' : 'text-blue-500'; // Set the same logic for language icon and span
 
   useEffect(() => {
-
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
       if (!isMobile) {
@@ -29,107 +27,101 @@ export default function Header({ activeLink, setActiveLink }: HeaderProps) {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [isMobile]);
 
   return (
     <header className="absolute top-0 left-0 w-full z-10 bg-transparent">
       <div className='flex items-center justify-between max-w-screen-xl mx-auto px-4'>
         <div className='flex items-center mt-[20px] justify-between w-full'>
-          <Link to={'/'} onClick={() => setActiveLink('/')}>
+          <Link to={'/'}  >
             <img className='cursor-pointer xl:ml-[100px] w-[80px] ml-[50px]' src={logo} alt="Logo" />
           </Link>
 
-          {/* Hamburger icon for mobile */}
-          <div
-            className='lg:hidden ml-4 cursor-pointer'
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <div className={`h-1 w-8 mb-1 ${hamburgerColor}`}></div>
-            <div className={`h-1 w-8 mb-1 ${hamburgerColor}`}></div>
-            <div className={`h-1 w-8 ${hamburgerColor}`}></div>
-          </div>
-
-          {/* Desktop Navigation */}
-          {!menuOpen && (
-            <div className='items-center lg:mr-[100px] xl:mr-[300px] ml-6 hidden lg:flex'>
-              <Link to='/' onClick={() => setActiveLink('/')} className={`font-poppins ${navLinkColor} mr-6 text-xl pb-1 transition duration-300 hover:text-gray-400 ${activeLink === '/' ? 'border-b-2 border-white' : ''}`}>
-                Home
-              </Link>
-              <Link to='/about' onClick={() => setActiveLink('/about')} className={`font-poppins ${navLinkColor} text-xl pb-1 mr-6 transition duration-300 hover:text-gray-400 ${activeLink === '/about' ? 'border-b-2 border-blue' : ''}`}>
-                About
-              </Link>
-              <Link to='/services' onClick={() => setActiveLink('/services')} className={`font-poppins ${navLinkColor} text-xl pb-1 mr-6 transition duration-300 hover:text-gray-400 ${activeLink === '/services' ? 'border-b-2 border-blue' : ''}`}>
-                Services
-              </Link>
-              <Link to='/contact' onClick={() => setActiveLink('/contact')} className={`font-poppins ${navLinkColor} text-xl pb-1 transition duration-300 hover:text-gray-400 ${activeLink === '/contact' ? 'border-b-2 border-blue' : ''}`}>
-                Contact
-              </Link>
+          {/* Hamburger icon and language icon (always visible) */}
+          <div className="flex items-center">
+            <div
+              className='lg:hidden ml-4 cursor-pointer'
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <div className={`h-1 w-8 mb-1 ${hamburgerColor}`}></div>
+              <div className={`h-1 w-8 mb-1 ${hamburgerColor}`}></div>
+              <div className={`h-1 w-8 ${hamburgerColor}`}></div>
             </div>
-          )}
-        </div>
 
-        {/* Contact information and language selector */}
-        <div className='items-center mt-[25px] hidden lg:flex '>
-          {/* <h1 className={`font-poppins text-xl cursor-pointer transition duration-300 hover:text-gray-400 ${navLinkColor}`} onClick={handleCopy}>
-            K.mchedlishvili@mkoia.ge
-          </h1> */}
-          <div className={`mr-6 flex items-center ml-6 cursor-pointer transition duration-300 hover:text-gray-400 ${navLinkColor}`}>
-            <span className='mr-1 font-poppins text-xl'>ქა</span>
-            <FontAwesomeIcon icon={faLanguage} />
+            {/* Language Icon (Always visible) */}
+            {/* <div className="ml-4 md:ml-[800px]">
+              <span className={` pr-[5px] text-[20px] font-lato ${languageColor}`}>ქა</span>
+              <FontAwesomeIcon icon={faLanguage} className={`text-[20px] ${languageColor}`} />
+            </div> */}
           </div>
         </div>
-      </div>
 
-      {activeLink !== '/' && <div className='mt-[20px] h-[1px] w-full bg-gray-500'></div>}
-
-      {/* Dropdown menu for mobile */}
-      {menuOpen && (
-        <div className='flex flex-col items-center bg-transparent p-4'>
-          <div className='flex flex-wrap justify-between w-full gap-1 '>
+        {menuOpen && isMobile && (
+          <div className='absolute top-1 left-5 w-full bg-transparent flex flex-col items-center'>
             <Link
               to='/'
-              onClick={() => { setActiveLink('/'); setMenuOpen(false); }}
-              className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
+              onClick={() => {  setMenuOpen(false); }}
+              className={`w-full text-center p-1 mb-1 ${navLinkColor} transition duration-300 hover:bg-gray-200`}
             >
               Home
             </Link>
             <Link
               to='/about'
-              onClick={() => { setActiveLink('/about'); setMenuOpen(false); }}
-              className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
+              onClick={() => {  setMenuOpen(false); }}
+              className={`w-full text-center p-1 mb-1 ${navLinkColor} transition duration-300 hover:bg-gray-200`}
             >
               About
             </Link>
             <Link
               to='/services'
-              onClick={() => { setActiveLink('/services'); setMenuOpen(false); }}
-              className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
+              onClick={() => {  setMenuOpen(false); }}
+              className={`w-full text-center p-1 mb-1 ${navLinkColor} transition duration-300 hover:bg-gray-200`}
             >
               Services
             </Link>
             <Link
               to='/contact'
-              onClick={() => { setActiveLink('/contact'); setMenuOpen(false); }}
-              className={`w-1/3 text-center p-1 rounded-lg mb-2 hover:bg-gray-200 ${navLinkColor}`}
+              onClick={() => {  setMenuOpen(false); }}
+              className={`w-full text-center p-1 mb-1 ${navLinkColor} transition duration-300 hover:bg-gray-200`}
             >
               Contact
             </Link>
-            {/* <h1 
-        className={`w-1/3 text-center p-1 font-poppins text-lg cursor-pointer mb-2 hover:bg-gray-200 ${navLinkColor}`} 
-        onClick={handleCopy}
-      >
-        K.mchedlishvili@mkoia.ge
-      </h1> */}
-            <div
-              className={`w-1/3 flex justify-center items-center p-1 cursor-pointer mb-2 hover:bg-gray-200 ${navLinkColor}`}
-            >
-              <span className='mr-1 font-poppins text-lg'>ქა</span>
-              <FontAwesomeIcon icon={faLanguage} />
-            </div>
           </div>
-        </div>
-      )}
+        )}
 
+        
+        {!menuOpen && (
+          <div className='items-center lg:mr-[100px]  ml-6 hidden lg:flex'>
+            <Link
+              to='/'
+              
+              className={`font-poppins ${navLinkColor} mr-6 text-xl pb-1 transition duration-300 hover:text-gray-400 ${location.pathname  === '/' ? 'border-b-2 border-white' : ''}`}
+            >
+              Home
+            </Link>
+            <Link
+              to='/about'
+              className={`font-poppins ${navLinkColor} text-xl pb-1 mr-6 transition duration-300 hover:text-gray-400 ${location.pathname  === '/about' ? 'border-b-2 border-blue' : ''}`}
+            >
+              About
+            </Link>
+            <Link
+              to='/services'
+              className={`font-poppins ${navLinkColor} text-xl pb-1 mr-6 transition duration-300 hover:text-gray-400 ${location.pathname  === '/services' ? 'border-b-2 border-blue' : ''}`}
+            >
+              Services
+            </Link>
+            <Link
+              to='/contact'
+              className={`font-poppins ${navLinkColor} text-xl pb-1 transition duration-300 hover:text-gray-400 ${location.pathname  === '/contact' ? 'border-b-2 border-blue' : ''}`}
+            >
+              Contact
+            </Link>
+          </div>
+        )}
+      </div>
+
+      {location.pathname  !== '/' && <div className='mt-[20px] h-[1px] w-full bg-gray-500'></div>}
     </header>
   );
 }

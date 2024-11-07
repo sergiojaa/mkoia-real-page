@@ -1,15 +1,18 @@
 import Header from './Header'
 import { Outlet } from 'react-router-dom'
 import Footer from './Footer'
-import { useState } from 'react'
+import ScrollToTop from '../ScrollOnTop'
+
 
 export default function Layout() {
 
-  const [activeLink, setActiveLink] = useState('')
+ 
 
   return (
+
     <div>
-      <Header activeLink={activeLink} setActiveLink={setActiveLink} />
+      <ScrollToTop/>
+      <Header />
       <Outlet />
       <Footer />
     </div>

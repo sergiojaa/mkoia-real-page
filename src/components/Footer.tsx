@@ -18,17 +18,16 @@ export default function Footer() {
           <Link
               to='/'
               onClick={() => setActiveLink('/')}
-              className={` text-white font-poppins ${navLinkColor} md:mr-[30px] flex flex-col text-xl pb-1 transition duration-300 hover:text-gray-600 ${
-                activeLink === '/' ? 'border-b-2 border-white' : '' 
-              }`}
+              className={` text-white font-poppins ${navLinkColor} md:mr-[30px] flex flex-col text-xl pb-1 transition duration-300 hover:text-gray-600 
+              `}
             >
               Home
             </Link>
             <Link
               to='/about'
               onClick={() => setActiveLink('/about')}
-              className={` text-white font-poppins ${navLinkColor} text-xl  md:pb-1 md:mr-[30px] transition duration-300 hover:text-gray-600 ${
-                activeLink === '/about' ? 'border-b-2 border-white-500' : ''
+              className={` text-white font-poppins ${navLinkColor} text-xl  md:pb-1 md:mr-[30px] transition duration-300 hover:text-gray-600 
+                
               }`}
             >
               About
@@ -38,8 +37,8 @@ export default function Footer() {
           <Link
               to='/services'
               onClick={() => setActiveLink('/services')}
-              className={`text-white font-poppins ${navLinkColor} flex flex-col text-xl pb-1 md:mr-[30px] transition duration-300 hover:text-gray-600 ${
-                activeLink === '/services' ? 'border-b-2 border-white' : ''
+              className={`text-white font-poppins ${navLinkColor} flex flex-col text-xl pb-1 md:mr-[30px] transition duration-300 hover:text-gray-600 
+                
               }`}
             >
               Services
@@ -47,9 +46,7 @@ export default function Footer() {
             <Link
               to='/contact'
               onClick={() => setActiveLink('/contact')}
-              className={` text-white font-poppins ${navLinkColor} text-xl pb-1 transition duration-300 hover:text-gray-600 ${
-                activeLink === '/contact' ? 'border-b-2 border-white' : ''
-              }`}
+              className={` text-white font-poppins ${navLinkColor} text-xl pb-1 transition duration-300 hover:text-gray-600 `}
             >
               Contact
             </Link>

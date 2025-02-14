@@ -7,7 +7,7 @@ export default function About() {
 
 
       <div
-        className="lg:flex-row items-center  flex flex-col  justify-center  md:mt-[180px] mx-auto   items-center bg-cover bg-center"
+        className="lg:flex-row items-center  flex flex-col  justify-center  md:mt-[180px] mx-auto    bg-cover bg-center"
       >
 
         <div className="lg:ml-[20px]   md:ml-[20px] lg:mt-[250px] ">
@@ -31,9 +31,9 @@ export default function About() {
 
       </div>
       <div className="xl:mt-[20px] lg:ml-[70px] mt-10 ">
-        <p className="text-gray-500 lg:w-[300px] lg:ml-10 lg:mt-5  xl:text-[20px] xl:ml-[50px] xl:w-[600px] lg:ml-[-30px] mb-[20px] md:ml-[40px] lg:text-[20px] mt-[20px] lg:mt-[-10px] ml-[20px] font-lato md:text-[20px] md:w-[600px] md:mt-[50px]">
+        <p className="text-gray-500 lg:w-[300px] lg:ml-10 lg:mt-5  xl:text-[20px] xl:ml-[50px] xl:w-[600px]  mb-[20px] md:ml-[40px] lg:text-[20px] mt-[20px] lg:mt-[-10px] ml-[20px] font-lato md:text-[20px] md:w-[600px] md:mt-[50px]">
           <span className="text-blue-500 font-bold lg:text-[24px] text-[25px] font-lato md:text-[39px]">
-            ლოჯისტიკური კომპანია ემკოია -
+            ლოჯისტიკური კომპანია ემკოია
           </span>
           სპეციალიზირებული სამშენებლო მასალების ლოჯისტიკაში. ჩვენი მთავარი ვალდებულებაა, რომ თქვენი პროექტები დასრულდეს დროულად . კომპანიის ნიშაა პროდუქტის მიწოდება იმავე დღეს, არანაირი გადავადება. კომპანიისთვის უპირველესია დრო, შესაბამისად დაუღალავად ვშრომობთ თქვენი საჭიროებების დასაკმაყოფილებლად. ასევე კომპანიას აქვს საშუალება ჩამოგიტანოთ ნებისმიერი სამშენებლო მასალა ჩინეთიდან და თურქეთიდან. ვმუშაობთ როგორც მსხვილ კონტრაქტორებზე ასევე კერძო პირებზე. შესაკვეთად დაგვიკავშირდით მითითებულ მონაცემებზე. <br />
           <span className='font-bold text-blue-500 lg:text-[24px]'>შპს „ემკოია“ </span> - თანამშრომლობს ისეთ კომპანიებთან როგორებიც არიან: „დელტა მშენებელი“, „KTW DEVELOPEMNT“, “Coca-Cola Bottled Georgia”, „Rebuild“, „Geo Group“, „Construction Group“. ვპარტნიორობთ თურქულ და ჩინურ კომპანიებთან.  </p>

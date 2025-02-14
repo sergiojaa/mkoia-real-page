@@ -15,15 +15,15 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); 
+    }, 3000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [images.length]);
 
   return (
     <div>
       {/* Pass activeLink and setActiveLink to the Header */}
-      <Header  />
+      <Header />
 
       <div className="relative w-full mx-auto overflow-hidden h-[780px]">
         {images.map((image, index) => (

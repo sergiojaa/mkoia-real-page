@@ -24,9 +24,9 @@ export default function Header() {
           ${isOpen ? "flex flex-col items-center p-5 space-y-4 mt-4" : "hidden"} md:flex-row md:space-y-0 md:gap-6`}
       >
         <ul className="flex  md:flex-row space-y-4 md:space-y-0 md:gap-6">
-          <li><a href="#" className="hover:text-gray-300">Home</a></li>
+          <li><a href="/" className="hover:text-gray-300">Home</a></li>
           <li><a href="/about" className="hover:text-gray-300">About</a></li>
-          <li><a href="#" className="hover:text-gray-300">Services</a></li>
+          <li><a href="/services" className="hover:text-gray-300">Services</a></li>
           <li><a href="#" className="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>

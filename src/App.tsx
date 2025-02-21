@@ -37,9 +37,7 @@ function App() {
     <>
       <RouterProvider router={router}>
       </RouterProvider>
-      <Header />
-      <Home />
-      <Footer />
+
     </>
   )
 }

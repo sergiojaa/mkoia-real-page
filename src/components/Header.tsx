@@ -25,7 +25,7 @@ export default function Header() {
       >
         <ul className="flex  md:flex-row space-y-4 md:space-y-0 md:gap-6">
           <li><a href="#" className="hover:text-gray-300">Home</a></li>
-          <li><a href="#" className="hover:text-gray-300">About</a></li>
+          <li><a href="/about" className="hover:text-gray-300">About</a></li>
           <li><a href="#" className="hover:text-gray-300">Services</a></li>
           <li><a href="#" className="hover:text-gray-300">Contact</a></li>
         </ul>

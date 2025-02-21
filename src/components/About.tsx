@@ -3,16 +3,22 @@ import image4 from '../assets/logistic3.jpg';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const stagger = {
+const staggerList = {
+  initial: { opacity: 0 },
   animate: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.1
-    }
-  }
+      staggerChildren: 0.2, // Delay between list items
+    },
+  },
+};
+
+const fadeInItem = {
+  initial: { opacity: 0, y: 10 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 export default function About() {
@@ -21,7 +27,7 @@ export default function About() {
       <motion.div
         initial="initial"
         animate="animate"
-        variants={stagger}
+        variants={staggerList}
         className="flex mt-16 flex-col lg:flex-row justify-between max-w-[1000px] w-full mx-auto gap-8"
       >
         <motion.div variants={fadeInUp} className="w-full flex mt-4 flex-col gap-5 lg:w-[48%]">
@@ -31,10 +37,10 @@ export default function About() {
             ფლობს საწყობს თბილისში, საიდანაც ახდენს ყველაფრის მიწოდებას უმოკლეს ვადაში.
           </h3>
           <h4 className="font-bold text-xl mt-4 mb-2">ემკოიას აქვს ორი მთავარი ნიშა:</h4>
-          <ul className="list-disc pl-6 space-y-2">
-            <li className="text-lg">დროული მიწოდება</li>
-            <li className="text-lg">მომხმარებელზე გათვლილი მომსახურება</li>
-          </ul>
+          <motion.ul variants={staggerList} className="list-disc pl-6 space-y-2">
+            <motion.li variants={fadeInItem} className="text-lg">დროული მიწოდება</motion.li>
+            <motion.li variants={fadeInItem} className="text-lg">მომხმარებელზე გათვლილი მომსახურება</motion.li>
+          </motion.ul>
         </motion.div>
 
         <motion.div variants={fadeInUp} className="w-full lg:w-[48%] flex justify-end">
@@ -45,7 +51,7 @@ export default function About() {
       <motion.div
         initial="initial"
         animate="animate"
-        variants={stagger}
+        variants={staggerList}
         className="flex flex-col lg:flex-row justify-between max-w-[1000px] w-full mx-auto gap-8 mt-16"
       >
         <motion.div variants={fadeInUp} className="w-full lg:w-[48%] flex justify-start">
@@ -65,7 +71,7 @@ export default function About() {
       <motion.div
         initial="initial"
         animate="animate"
-        variants={stagger}
+        variants={staggerList}
         className="flex flex-col lg:items-center lg:flex-row justify-between max-w-[1000px] w-full mx-auto gap-8 mt-16"
       >
         <motion.div variants={fadeInUp} className="w-full lg:w-[48%]">

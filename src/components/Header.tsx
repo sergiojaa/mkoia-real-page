@@ -6,7 +6,7 @@ export default function Header() {
 
   return (
     <header className="bg-[#1C3345] p-4 flex flex-col md:flex-row justify-around items-center relative">
-      <div className="flex justify-between w-full md:w-auto items-center">
+      <div className="flex justify-between  max-w-[1500px] w-full md:w-auto items-center">
         <img className="w-[86px] h-[92px]" src={logo} alt="Logo of Mkoia" />
 
         <button
@@ -27,7 +27,7 @@ export default function Header() {
           <li><a href="/" className="hover:text-gray-300">Home</a></li>
           <li><a href="/about" className="hover:text-gray-300">About</a></li>
           <li><a href="/services" className="hover:text-gray-300">Services</a></li>
-          <li><a href="#" className="hover:text-gray-300">Contact</a></li>
+          <li><a href="/contact" className="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>
     </header>

@@ -17,7 +17,7 @@ const stagger = {
 
 export default function About() {
   return (
-    <div className='px-7 flex flex-col items-start lg:gap-20'>
+    <div className="container max-w-[1100px] mx-auto px-4 py-12">
       <motion.div
         initial="initial"
         animate="animate"

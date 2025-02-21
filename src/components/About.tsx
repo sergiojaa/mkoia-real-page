@@ -23,12 +23,12 @@ const fadeInItem = {
 
 export default function About() {
   return (
-    <div className="container max-w-[1100px] mx-auto px-4 py-12">
+    <div className="container flex flex-col gap-10 max-w-[1100px] mx-auto px-4 py-12">
       <motion.div
         initial="initial"
         animate="animate"
         variants={staggerList}
-        className="flex mt-16 flex-col lg:flex-row justify-between max-w-[1000px] w-full mx-auto gap-8"
+        className="flex mt-16 flex-col lg:flex-row justify-between max-w-[1000px] w-full mx-auto gap-10"
       >
         <motion.div variants={fadeInUp} className="w-full flex mt-4 flex-col gap-5 lg:w-[48%]">
           <h1 className="font-bold text-3xl text-primary mb-4">ჩვენს შესახებ</h1>

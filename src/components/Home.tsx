@@ -1,4 +1,4 @@
-import mainPoto from '../assets/logistic-1.jpg'
+import mainPoto from '../assets/logistic6.png'
 import secondImage from '../assets/logistic3.jpg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCar, faBox, faUsers, faTruckFast, faClock, faDollarSign, faUser, faHeadset } from "@fortawesome/free-solid-svg-icons";
@@ -11,10 +11,14 @@ export default function Home() {
       <div className='relative'>
         {/* <img className='w-full  h-[600px]' src={secondImage} alt="" /> */}
 
-        <img src={secondImage} alt="logistic image" className='w-full h-[500px]' />
-        <h2 className="absolute text-[40px] w-[240px] top-[30%] left-[10%] transform -translate-x-1/3 text-white font-bold text-start">
-          ლოჯისტიკა წარმატებული ბიზნესისთვის
-        </h2>
+        <div className="relative  w-full h-[400px]">
+          <img src={mainPoto} alt="logistic image" className="w-full h-full object-cover" />
+          <h2 className="absolute hidden lg:block text-[32px] w-[540px] bottom-[1%] left-1/2 transform -translate-x-1/2 text-white font-bold text-center">
+            ლოჯისტიკა წარმატებული ბიზნესისთვის
+          </h2>
+        </div>
+
+
 
 
       </div>
@@ -43,7 +47,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          {/* <img className='w-full ' src={secondImage} alt="" /> */}
+          <img src={secondImage} alt="logistic image" className="w-full h-[400px] object-cover" />
         </div>
         <div>
           <h2>ემკოია, სადაც თქვენი კმაყოფილება ჩვენი

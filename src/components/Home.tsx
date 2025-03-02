@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <div className='relative'>
-        <img className='w-full  h-[600px]' src={secondImage} alt="" />
+        {/* <img className='w-full  h-[600px]' src={secondImage} alt="" /> */}
 
         <div className="relative  w-full h-[400px]">
           <img src={mainPoto} alt="logistic image" className="w-full h-full object-cover" />
